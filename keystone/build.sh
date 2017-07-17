@@ -11,7 +11,7 @@ mkdir -p $SRC_DIR
 cd $BASE_DIR/../
 tar -cf $SRC_DIR/base.tar.gz base
 
-rpmbuild --bb base/keystone.spec \
+rpmbuild --bb base/rpm.spec \
     --define "_topdir ${TOP_DIR}" \
     --define "name ${NAME}" \
     --define "version ${VERSION}" \
