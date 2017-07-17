@@ -1,5 +1,5 @@
 Name:          vde2
-Version:       2.3.2
+Version:       %{version}
 Release:       1mamba
 Summary:       An ethernet compliant virtual network that can be spawned over a set of physical computer over the Internet
 Group:         Network/Routing
@@ -7,7 +7,7 @@ Vendor:        openmamba
 Distribution:  openmamba
 Packager:      Silvan Calarco <silvan.calarco@...>
 URL:           http://vde.sourceforge.net/
-Source:        http://downloads.sourceforge.net/project/vde/vde2/%{version}/vde2-%{version}.tar.gz
+Source:        vde2-%{version}.tar.gz
 License:       GPL
 ## AUTOBUILDREQ-BEGIN
 BuildRequires: glibc-devel

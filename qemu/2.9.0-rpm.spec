@@ -1,7 +1,3 @@
-%define name qemu
-%define version 2.9.0
-%define release 0
-
 Name:           %{name}
 Url:            http://www.qemu.org/
 Summary:        Universal CPU emulator
@@ -10,7 +6,7 @@ Group:          System/Emulators/PC
 Version:        %{version}
 Release:        %{release}
 
-Source0:        https://github.com/openstack/keystone/archive/12.0.0.0b2.tar.gz
+Source0:        qemu-%{version}.tar.xz
 
 BuildRequires:  gcc
 Requires:       gcc
