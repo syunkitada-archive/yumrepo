@@ -41,6 +41,7 @@ sed -i "s/\/tmp\/rpmbuild\/BUILD//g" opt/%{name}/bin/*
 rm -rf %{buildroot}
 mkdir -p %{buildroot}
 mkdir -p %{buildroot}/etc
+mkdir -p %{buildroot}/var/log/%{name}
 mkdir -p %{buildroot}/usr/lib/systemd/
 cp -r opt %{buildroot}
 cp -r %{name}-%{version}/etc %{buildroot}/etc/%{name}
@@ -52,6 +53,7 @@ rm -rf %{buildroot}
 %files
 /opt/%{name}
 %attr(-, root, root) /usr/lib/systemd/system/*
+%dir %attr(0755, root, root) /var/log/%{name}
 %dir %attr(0755, root, root) /etc/%{name}
 %dir %attr(0755, root, root) /etc/%{name}/metadefs
 %dir %attr(0755, root, root) /etc/%{name}/oslo-config-generator
