@@ -52,8 +52,8 @@ cd %{buildroot}/opt/%{name}/share/horizon/ && %{buildroot}/opt/%{name}/bin/pytho
 cd %{buildroot}/opt/%{name}/share/horizon/ && %{buildroot}/opt/%{name}/bin/python manage.py compress --force
 
 cp %{buildroot}/opt/%{name}/share/horizon/openstack_dashboard/local/local_settings.py.example %{buildroot}/etc/%{name}/local_settings.py
-cd %{buildroot}/etc/%{name}/
-ln -s local_settings.py ../../opt/%{name}/share/horizon/openstack_dashboard/local/local_settings.py
+cd %{buildroot}/opt/%{name}/share/horizon/openstack_dashboard/local/
+ln -s ../../../../../../etc/horizon/local_settings.py local_settings.py
 
 %clean
 rm -rf %{buildroot}

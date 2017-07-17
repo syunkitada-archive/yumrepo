@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenStack Orchestration Service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/heat/bin/heat-api-cfn \
+          --config-file=/etc/heat/heat.conf \
+          --log-file=/var/log/heat/api-cfn.log
+ExecStop=/bin/kill -WINCH ${MAINPID}
+User=root
+Restart=always
+KillSignal=SIGQUIT
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

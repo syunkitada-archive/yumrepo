@@ -3,6 +3,7 @@ Description=OpenStack Volume Service
 After=syslog.target network.target
 
 [Service]
+Environment="PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/cinder/bin"
 Type=simple
 ExecStart=/opt/cinder/bin/cinder-volume \
           --config-file=/etc/cinder/cinder.conf \
