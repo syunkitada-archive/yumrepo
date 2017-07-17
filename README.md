@@ -23,3 +23,14 @@ baseurl=http://syunkitada.github.io/yumrepo/centos/7/x86_64/
 enabled=1
 gpgcheck=0
 ```
+
+
+## rpm-builderイメージの作成
+```
+$ cd centos7-rpm-builder
+$ make build
+
+# Docker Hubにログインして、イメージをPushする
+$ make login
+$ make push
+```
