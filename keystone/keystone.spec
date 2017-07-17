@@ -35,7 +35,7 @@ git tag -a %{version} -m %{version}
 cd ../
 
 find opt/%{name} -name '*.pyc' | xargs rm -f || echo 'no *.pyc'
-sed -i 's/\/tmp\/.*\/rpmbuild\/BUILD//g' opt/%{name}/bin/*
+sed -i 's/\/tmp\/rpmbuild\/BUILD//g' opt/keystone/bin/*
 
 %install
 rm -rf %{buildroot}
