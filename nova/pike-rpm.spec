@@ -43,6 +43,7 @@ mkdir -p %{buildroot}
 mkdir -p %{buildroot}/etc
 mkdir -p %{buildroot}/var/log/%{name}
 mkdir -p %{buildroot}/usr/lib/systemd/
+mkdir -p %{buildroot}/var/lib/nova/instances
 cp -r opt %{buildroot}
 cp -r %{name}-%{version}/etc/nova %{buildroot}/etc/%{name}
 cp -r base/system %{buildroot}/usr/lib/systemd/system
@@ -54,6 +55,8 @@ rm -rf %{buildroot}
 /opt/%{name}
 %attr(-, root, root) /usr/lib/systemd/system/*
 %dir %attr(0755, root, root) /var/log/%{name}
+%dir %attr(0755, root, root) /var/lib/%{name}
+%dir %attr(0755, root, root) /var/lib/%{name}/instances
 %dir %attr(0755, root, root) /etc/%{name}
 %dir %attr(0755, root, root) /etc/%{name}/rootwrap.d
 %config(noreplace) %attr(-, root, root) /etc/%{name}/*
