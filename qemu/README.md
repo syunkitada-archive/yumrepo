@@ -1,6 +1,8 @@
 # qemu
 * https://github.com/qemu/qemu
 
+## require
+* yumrepo/vde2
 
 ## make
 ```
