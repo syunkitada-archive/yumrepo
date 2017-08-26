@@ -25,6 +25,9 @@ virtualenv opt/%{name} --system-site-packages
 opt/%{name}/bin/pip install -r base/%{version_name}-requirements.txt
 
 cd %{name}-%{version}
+
+sed -i "s/exec_dirs=.*/exec_dir=\/sbin,\/usr\/sbin,\/bin,\/usr\/bin,\/usr\/local\/sbin,\/usr\/local\/bin,\/opt\/nova\/bin/g" etc/nova/rootwrap.conf
+
 git config --global user.name "nobody"
 git config --global user.email "nobody@example.com"
 git init
@@ -32,10 +35,12 @@ git add .
 git commit -m %{version}
 git tag -a %{version} -m %{version}
 ../opt/%{name}/bin/python setup.py install
+
 cd ../
 
 find opt/%{name} -name '*.pyc' | xargs rm -f || echo 'no *.pyc'
 sed -i "s/\/tmp\/rpmbuild\/BUILD//g" opt/%{name}/bin/*
+
 
 %install
 rm -rf %{buildroot}
