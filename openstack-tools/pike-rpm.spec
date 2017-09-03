@@ -25,6 +25,11 @@ opt/%{name}/bin/pip install -r base/%{version_name}-requirements.txt
 find opt/%{name} -name '*.pyc' | xargs rm -f || echo 'no *.pyc'
 sed -i "s/\/tmp\/rpmbuild\/BUILD//g" opt/%{name}/bin/*
 
+mkdir -p %{buildroot}/usr/bin/
+cd %{buildroot}/usr/bin/
+ln -s ../../opt/%{name}/bin/openstack openstack
+ln -s ../../opt/%{name}/bin/uwsgi uwsgi
+
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}
