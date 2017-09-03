@@ -42,7 +42,6 @@ rm -rf %{buildroot}
 
 %files
 /opt/%{name}
-/usr/bin
 %attr(0755, root, root) /usr/bin/*
 
 
