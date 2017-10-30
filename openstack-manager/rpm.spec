@@ -34,9 +34,11 @@ sed -i "s/\/tmp\/rpmbuild\/BUILD//g" opt/%{name}/bin/*
 rm -rf %{buildroot}
 mkdir -p %{buildroot}
 mkdir -p %{buildroot}/etc
+mkdir -p %{buildroot}/usr/lib/systemd/
 mkdir -p %{buildroot}/var/log/%{name}
 cp -r opt %{buildroot}
 cp -r src/%{name}/etc %{buildroot}/etc/%{name}
+cp -r src/base/system %{buildroot}/usr/lib/systemd/system
 
 
 %clean
@@ -45,6 +47,7 @@ rm -rf %{buildroot}
 
 %files
 /opt/%{name}
+%attr(-, root, root) /usr/lib/systemd/system/*
 %dir %attr(0755, root, root) /var/log/%{name}
 %dir %attr(0755, root, root) /etc/%{name}
 %config(noreplace) %attr(-, root, root) /etc/%{name}/*

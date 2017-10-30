@@ -1,0 +1,15 @@
+[Unit]
+Description=InfluxDB Relay
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/influxdb-relay/bin/influxdb-relay -config /etc/influxdb-relay/relay.toml
+ExecStop=/bin/kill -WINCH ${MAINPID}
+User=root
+Restart=always
+KillSignal=SIGQUIT
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
