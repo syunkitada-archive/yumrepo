@@ -2,7 +2,7 @@
 
 yum -y update
 yum -y install epel-release
-yum -y install curl wget git gcc gcc-c++ rpm-build createrepo \
+yum -y install curl wget git gcc gcc-c++ rpm-build createrepo go \
                libxml2-devel libxslt-devel libffi-devel \
                openssl-devel liberasurecode-devel \
                pulseaudio-libs-devel systemtap-sdt-devel bluez-libs-devel \
