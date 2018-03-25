@@ -25,6 +25,7 @@ rm -rf %{buildroot}
 
 %build
 ./configure --enable-pie --enable-vnc --enable-kvm --enable-rdma --enable-vde --enable-linux-aio --enable-cap-ng --enable-vhost-net --enable-libiscsi --enable-coroutine-pool --enable-tpm --enable-numa --enable-jemalloc --prefix=/usr
+# TODO --disable-pie --enable-xfsctl
 make -j16
 
 
