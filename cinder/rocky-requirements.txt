@@ -67,5 +67,6 @@ castellan>=0.16.0 # Apache-2.0
 cryptography>=2.1 # BSD/Apache-2.0
 
 # extentions
-PyMySQL==0.7.11
-python-memcached==1.58
+PyMySQL
+python-memcached
+uwsgi

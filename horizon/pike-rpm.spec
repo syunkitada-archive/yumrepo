@@ -41,7 +41,6 @@ sed -i "s/\/tmp\/rpmbuild\/BUILD//g" opt/%{name}/bin/*
 rm -rf %{buildroot}
 mkdir -p %{buildroot}
 mkdir -p %{buildroot}/etc/%{name}
-cp -r base/etc/* %{buildroot}/etc/%{name}/
 mkdir -p %{buildroot}/usr/lib/systemd/
 cp -r base/system %{buildroot}/usr/lib/systemd/system
 cp -r opt %{buildroot}

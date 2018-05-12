@@ -1,0 +1,15 @@
+[Unit]
+Description=OpenStack Volume Service
+After=syslog.target network.target
+
+[Service]
+Type=notify
+ExecStart=/opt/cinder/bin/uwsgi --ini /etc/cinder/cinder-api-uwsgi.ini
+ExecStop=/bin/kill -WINCH ${MAINPID}
+User=root
+Restart=always
+KillSignal=SIGQUIT
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

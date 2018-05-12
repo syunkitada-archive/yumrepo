@@ -69,3 +69,4 @@ python-dateutil>=2.5.3 # BSD
 # extentions
 PyMySQL
 python-memcached
+uwsgi

@@ -120,3 +120,4 @@ wrapt==1.10.11
 # extentions
 PyMySQL==0.7.11
 python-memcached==1.58
+uwsgi

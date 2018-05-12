@@ -44,7 +44,6 @@ mkdir -p %{buildroot}/etc
 mkdir -p %{buildroot}/usr/lib/systemd/
 cp -r opt %{buildroot}
 cp -r %{name}-%{version}/etc %{buildroot}/etc/%{name}
-cp -r base/etc/* %{buildroot}/etc/%{name}/
 cp -r base/system %{buildroot}/usr/lib/systemd/system
 
 %clean

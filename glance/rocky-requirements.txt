@@ -57,3 +57,4 @@ monotonic>=0.6 # Apache-2.0
 # extentions
 PyMySQL
 python-memcached
+uwsgi
