@@ -46,7 +46,7 @@ msgpack-python==0.4.8
 netaddr==0.7.19
 netifaces==0.10.6
 networkx==1.11
-numpy==1.13.1
+numpy==1.22.0
 os-brick==1.13.1
 os-client-config==1.28.0
 os-traits==0.3.2
